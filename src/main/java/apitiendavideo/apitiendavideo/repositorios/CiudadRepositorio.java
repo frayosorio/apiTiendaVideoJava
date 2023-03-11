@@ -6,12 +6,12 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
 
-import apitiendavideo.apitiendavideo.modelos.Pais;
+import apitiendavideo.apitiendavideo.modelos.Ciudad;
 
 @Repository
-public interface PaisRepositorio extends JpaRepository<Pais, Long> {
+public interface CiudadRepositorio extends JpaRepository<Ciudad, Long> {
 
-    @Query("SELECT p FROM Pais p WHERE p.pais like '%' || ?1 || '%'")
-    List<Pais> buscar(String nombre);
+    @Query("SELECT c FROM Ciudad c WHERE c.ciudad like '%' || ?1 || '%'")
+    List<Ciudad> buscar(String nombre);
 
 }

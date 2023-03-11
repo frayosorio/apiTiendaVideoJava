@@ -8,29 +8,28 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
-import apitiendavideo.apitiendavideo.modelos.Pais;
-import apitiendavideo.apitiendavideo.servicios.IPaisServicio;
+import apitiendavideo.apitiendavideo.modelos.Ciudad;
+import apitiendavideo.apitiendavideo.servicios.ICiudadServicio;
 
 @RestController
-@RequestMapping("/paises")
-public class PaisControlador {
+@RequestMapping("/ciudades")
+public class CiudadControlador {
     
     @Autowired
-    private IPaisServicio servicio;
+    private ICiudadServicio servicio;
 
-
-    @RequestMapping(value="/listar", method=RequestMethod.GET)
-    public List<Pais> listar(){
+    @RequestMapping(value = "/listar", method = RequestMethod.GET)
+    public List<Ciudad> listar() {
         return servicio.listar();
     }
 
     @RequestMapping(value = "/obtener/{id}", method = RequestMethod.GET)
-    public Pais obtener(@PathVariable Long id) {
+    public Ciudad obtener(@PathVariable Long id) {
         return servicio.obtener(id);
     }
 
     @RequestMapping(value = "/buscar/{nombre}", method = RequestMethod.GET)
-    public List<Pais> buscar(@PathVariable String nombre) {
+    public List<Ciudad> buscar(@PathVariable String nombre) {
         return servicio.buscar(nombre);
     }
 

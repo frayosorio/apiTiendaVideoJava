@@ -24,4 +24,9 @@ public class EmpresaServicio implements IEmpresaServicio {
         return repositorio.findById(id).get();
     }
 
+    @Override
+    public List<Empresa> buscar(String nombre) {
+        return repositorio.buscar(nombre);
+    }
+
 }

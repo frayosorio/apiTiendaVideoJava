@@ -10,4 +10,6 @@ public interface IPaisServicio {
 
     public Pais obtener(Long id);
 
+    public List<Pais> buscar(String nombre);
+
 }

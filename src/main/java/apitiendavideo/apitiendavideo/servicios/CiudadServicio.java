@@ -5,27 +5,28 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import apitiendavideo.apitiendavideo.modelos.Pais;
-import apitiendavideo.apitiendavideo.repositorios.PaisRepositorio;
+import apitiendavideo.apitiendavideo.modelos.Ciudad;
+import apitiendavideo.apitiendavideo.repositorios.CiudadRepositorio;
 
 @Service
-public class PaisServicio implements IPaisServicio {
-
+public class CiudadServicio implements ICiudadServicio {
+    
     @Autowired
-    PaisRepositorio repositorio;
+    private CiudadRepositorio repositorio;
 
     @Override
-    public List<Pais> listar() {
+    public List<Ciudad> listar() {
         return repositorio.findAll();
     }
 
     @Override
-    public Pais obtener(Long id) {
+    public Ciudad obtener(Long id) {
         return repositorio.findById(id).get();
     }
 
     @Override
-    public List<Pais> buscar(String nombre) {
+    public List<Ciudad> buscar(String nombre) {
         return repositorio.buscar(nombre);
     }
+
 }

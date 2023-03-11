@@ -9,4 +9,6 @@ public interface IEmpresaServicio {
 
     public Empresa obtener(Long id);
 
+    public List<Empresa> buscar(String nombre);
+
 }
