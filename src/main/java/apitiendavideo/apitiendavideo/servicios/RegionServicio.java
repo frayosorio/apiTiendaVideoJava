@@ -5,33 +5,34 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import apitiendavideo.apitiendavideo.modelos.Empresa;
-import apitiendavideo.apitiendavideo.repositorios.EmpresaRepositorio;
+import apitiendavideo.apitiendavideo.modelos.Region;
+import apitiendavideo.apitiendavideo.repositorios.RegionRepositorio;
 
 @Service
-public class EmpresaServicio implements IEmpresaServicio {
+public class RegionServicio implements IRegionServicio {
 
     @Autowired
-    private EmpresaRepositorio repositorio;
+    RegionRepositorio repositorio;
 
     @Override
-    public List<Empresa> listar() {
+    public List<Region> listar() {
         return repositorio.findAll();
     }
 
     @Override
-    public Empresa obtener(Long id) {
-        return repositorio.findById(id).get();
+    public Region obtener(Long id) {
+        var region = repositorio.findById(id);
+        return region.isEmpty() ? null : region.get();
     }
 
     @Override
-    public List<Empresa> buscar(String nombre) {
+    public List<Region> buscar(String nombre) {
         return repositorio.buscar(nombre);
     }
 
     @Override
-    public Empresa guardar(Empresa empresa) {
-        return repositorio.save(empresa);
+    public Region guardar(Region region) {
+        return repositorio.save(region);
     }
 
     @Override

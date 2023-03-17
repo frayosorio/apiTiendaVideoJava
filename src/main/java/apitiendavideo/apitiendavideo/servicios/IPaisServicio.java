@@ -14,6 +14,6 @@ public interface IPaisServicio {
 
     public Pais guardar(Pais pais);
 
-    public boolean elimininar(Long id);
+    public boolean eliminar(Long id);
 
 }

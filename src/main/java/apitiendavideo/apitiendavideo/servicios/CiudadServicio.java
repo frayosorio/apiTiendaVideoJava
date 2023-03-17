@@ -29,4 +29,19 @@ public class CiudadServicio implements ICiudadServicio {
         return repositorio.buscar(nombre);
     }
 
+    @Override
+    public Ciudad guardar(Ciudad ciudad) {
+        return repositorio.save(ciudad);
+    }
+
+    @Override
+    public boolean eliminar(Long id) {
+        try {
+            repositorio.deleteById(id);
+            return true;
+        } catch (Exception ex) {
+            return false;
+        }
+    }
+
 }

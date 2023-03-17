@@ -36,8 +36,12 @@ public class PaisServicio implements IPaisServicio {
     }
 
     @Override
-    public boolean elimininar(Long id) {
-        repositorio.deleteById(id);
-        return true;
+    public boolean eliminar(Long id) {
+        try {
+            repositorio.deleteById(id);
+            return true;
+        } catch (Exception ex) {
+            return false;
+        }
     }
 }
