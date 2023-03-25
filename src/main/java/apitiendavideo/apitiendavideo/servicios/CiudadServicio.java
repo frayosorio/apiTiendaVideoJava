@@ -2,17 +2,25 @@ package apitiendavideo.apitiendavideo.servicios;
 
 import java.util.List;
 
+import javax.persistence.EntityManager;
+import javax.persistence.ParameterMode;
+import javax.persistence.PersistenceContext;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import apitiendavideo.apitiendavideo.modelos.Ciudad;
+import apitiendavideo.apitiendavideo.modelos.Tercero;
 import apitiendavideo.apitiendavideo.repositorios.CiudadRepositorio;
 
 @Service
 public class CiudadServicio implements ICiudadServicio {
-    
+
     @Autowired
     private CiudadRepositorio repositorio;
+
+    @PersistenceContext
+    public EntityManager em;
 
     @Override
     public List<Ciudad> listar() {
@@ -42,6 +50,16 @@ public class CiudadServicio implements ICiudadServicio {
         } catch (Exception ex) {
             return false;
         }
+    }
+
+    @Override
+    public List<Tercero> buscarClientes(String nombre) {
+        List<Tercero> terceros = em.createStoredProcedureQuery("fBuscarClientes", Tercero.class)
+                .registerStoredProcedureParameter("nombreCiudad", String.class, ParameterMode.IN)
+                .setParameter("nombreCiudad", nombre)
+                .getResultList();
+
+        return terceros;
     }
 
 }

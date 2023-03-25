@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 import apitiendavideo.apitiendavideo.modelos.Ciudad;
+import apitiendavideo.apitiendavideo.modelos.Tercero;
 import apitiendavideo.apitiendavideo.servicios.ICiudadServicio;
 
 @RestController
@@ -32,6 +33,11 @@ public class CiudadControlador {
     @RequestMapping(value = "/buscar/{nombre}", method = RequestMethod.GET)
     public List<Ciudad> buscar(@PathVariable String nombre) {
         return servicio.buscar(nombre);
+    }
+
+    @RequestMapping(value = "/{nombre}/buscarclientes", method = RequestMethod.GET)
+    public List<Tercero> buscarClientes(@PathVariable String nombre) {
+        return servicio.buscarClientes(nombre);
     }
     
     @RequestMapping(value = "/agregar", method = RequestMethod.POST)
