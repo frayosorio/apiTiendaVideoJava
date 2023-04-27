@@ -9,9 +9,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
+import apitiendavideo.apitiendavideo.interfaces.ICiudadServicio;
 import apitiendavideo.apitiendavideo.modelos.Ciudad;
 import apitiendavideo.apitiendavideo.modelos.Tercero;
-import apitiendavideo.apitiendavideo.servicios.ICiudadServicio;
 
 @RestController
 @RequestMapping("/ciudades")

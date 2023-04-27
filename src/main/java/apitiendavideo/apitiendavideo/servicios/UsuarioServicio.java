@@ -7,6 +7,8 @@ import java.util.stream.Collectors;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.AuthorityUtils;
 import org.springframework.stereotype.Service;
+
+import apitiendavideo.apitiendavideo.interfaces.IUsuarioServicio;
 import apitiendavideo.apitiendavideo.modelos.Usuario;
 import apitiendavideo.apitiendavideo.seguridad.FiltroSeguridad;
 import io.jsonwebtoken.Jwts;

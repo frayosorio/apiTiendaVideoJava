@@ -9,8 +9,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
+import apitiendavideo.apitiendavideo.interfaces.IRegionServicio;
 import apitiendavideo.apitiendavideo.modelos.Region;
-import apitiendavideo.apitiendavideo.servicios.IRegionServicio;
 
 @RestController
 @RequestMapping("/regiones")

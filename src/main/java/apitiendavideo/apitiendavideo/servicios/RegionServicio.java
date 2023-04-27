@@ -5,6 +5,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import apitiendavideo.apitiendavideo.interfaces.IRegionServicio;
 import apitiendavideo.apitiendavideo.modelos.Region;
 import apitiendavideo.apitiendavideo.repositorios.RegionRepositorio;
 

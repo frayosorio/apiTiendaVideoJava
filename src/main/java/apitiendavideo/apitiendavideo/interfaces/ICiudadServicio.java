@@ -1,4 +1,4 @@
-package apitiendavideo.apitiendavideo.servicios;
+package apitiendavideo.apitiendavideo.interfaces;
 
 import java.util.List;
 

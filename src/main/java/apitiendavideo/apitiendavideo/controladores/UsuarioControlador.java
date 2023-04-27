@@ -6,8 +6,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
+import apitiendavideo.apitiendavideo.interfaces.IUsuarioServicio;
 import apitiendavideo.apitiendavideo.modelos.Usuario;
-import apitiendavideo.apitiendavideo.servicios.IUsuarioServicio;
 
 @RestController
 @RequestMapping("/usuarios")

@@ -9,40 +9,41 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
-import apitiendavideo.apitiendavideo.interfaces.IPaisServicio;
-import apitiendavideo.apitiendavideo.modelos.Pais;
+import apitiendavideo.apitiendavideo.interfaces.IInventarioServicio;
+import apitiendavideo.apitiendavideo.modelos.Inventario;
 
 @RestController
-@RequestMapping("/paises")
-public class PaisControlador {
+@RequestMapping("/inventarios")
+public class InventarioControlador {
 
     @Autowired
-    private IPaisServicio servicio;
+    private IInventarioServicio servicio;
 
     @RequestMapping(value = "/listar", method = RequestMethod.GET)
-    public List<Pais> listar() {
+    public List<Inventario> listar() {
         return servicio.listar();
     }
 
     @RequestMapping(value = "/obtener/{id}", method = RequestMethod.GET)
-    public Pais obtener(@PathVariable Long id) {
+    public Inventario obtener(@PathVariable Long id) {
         return servicio.obtener(id);
     }
 
     @RequestMapping(value = "/buscar/{nombre}", method = RequestMethod.GET)
-    public List<Pais> buscar(@PathVariable String nombre) {
+    public List<Inventario> buscar(@PathVariable String nombre) {
         return servicio.buscar(nombre);
     }
 
+
     @RequestMapping(value = "/agregar", method = RequestMethod.POST)
-    public Pais crear(@RequestBody Pais pais) {
-        return servicio.guardar(pais);
+    public Inventario crear(@RequestBody Inventario inventario) {
+        return servicio.guardar(inventario);
     }
 
     @RequestMapping(value = "/modificar", method = RequestMethod.PUT)
-    public Pais actualizar(@RequestBody Pais pais) {
-        if (servicio.obtener(pais.getId()) != null) {
-            return servicio.guardar(pais);
+    public Inventario actualizar(@RequestBody Inventario inventario) {
+        if (servicio.obtener(inventario.getId()) != null) {
+            return servicio.guardar(inventario);
         } else {
             return null;
         }
@@ -52,5 +53,6 @@ public class PaisControlador {
     public boolean eliminar(@PathVariable long id) {
         return servicio.eliminar(id);
     }
+
 
 }

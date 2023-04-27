@@ -9,6 +9,7 @@ import javax.persistence.PersistenceContext;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import apitiendavideo.apitiendavideo.interfaces.ICiudadServicio;
 import apitiendavideo.apitiendavideo.modelos.Ciudad;
 import apitiendavideo.apitiendavideo.modelos.Tercero;
 import apitiendavideo.apitiendavideo.repositorios.CiudadRepositorio;

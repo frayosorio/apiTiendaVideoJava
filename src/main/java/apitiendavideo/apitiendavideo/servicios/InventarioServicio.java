@@ -5,34 +5,34 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import apitiendavideo.apitiendavideo.interfaces.IPaisServicio;
-import apitiendavideo.apitiendavideo.modelos.Pais;
-import apitiendavideo.apitiendavideo.repositorios.PaisRepositorio;
+import apitiendavideo.apitiendavideo.interfaces.IInventarioServicio;
+import apitiendavideo.apitiendavideo.modelos.Inventario;
+import apitiendavideo.apitiendavideo.repositorios.InventarioRepositorio;
 
 @Service
-public class PaisServicio implements IPaisServicio {
+public class InventarioServicio implements IInventarioServicio {
 
     @Autowired
-    PaisRepositorio repositorio;
+    InventarioRepositorio repositorio;
 
     @Override
-    public List<Pais> listar() {
+    public List<Inventario> listar() {
         return repositorio.findAll();
     }
 
     @Override
-    public Pais obtener(Long id) {
+    public Inventario obtener(Long id) {
         var pais = repositorio.findById(id);
         return pais.isEmpty() ? null : pais.get();
     }
 
     @Override
-    public List<Pais> buscar(String nombre) {
+    public List<Inventario> buscar(String nombre) {
         return repositorio.buscar(nombre);
     }
 
     @Override
-    public Pais guardar(Pais pais) {
+    public Inventario guardar(Inventario pais) {
         return repositorio.save(pais);
     }
 
